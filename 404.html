@@ -7,6 +7,7 @@
 <style>
 body{font-family:-apple-system,Helvetica,Arial,sans-serif;max-width:520px;margin:0 auto;padding:40px 20px;color:#3A2A21;background:#FFF4E8;line-height:1.55;text-align:center}
 h1{color:#F2682A;font-size:34px}
+code{font-size:28px;letter-spacing:2px;background:#fff;padding:8px 14px;border-radius:10px;display:inline-block;margin:6px 0}
 a.b{display:inline-block;background:#F2682A;color:#fff;padding:14px 22px;border-radius:14px;text-decoration:none;font-weight:700;margin:8px}
 </style>
 </head>
@@ -16,7 +17,6 @@ a.b{display:inline-block;background:#F2682A;color:#fff;padding:14px 22px;border-
   <p>Du wurdest zu einer Runde Dish eingeladen: 10 Lokale swipen, ein Match entscheidet.</p>
   <p id="dev"></p>
   <p id="store"></p>
-  <p>Schon installiert? Dann tipp den Link in deiner Nachricht nochmal an.</p>
 </div>
 <div id="nf" hidden>
   <h1>Seite nicht gefunden</h1>
@@ -28,9 +28,14 @@ a.b{display:inline-block;background:#F2682A;color:#fff;padding:14px 22px;border-
   document.getElementById(isInvite ? 'invite' : 'nf').hidden = false;
   var code = (location.pathname.match(/\/r\/([0-9a-f]{12})/) || [])[1];
   var t = new URLSearchParams(location.search).get('t');
+  var dev = '';
   if (code && t && /^[0-9a-z.\-]+(:[0-9]+)?$/i.test(t)) {
-    document.getElementById('dev').innerHTML = '<a class="b" href="exp://' + t + '/--/r/' + code + '">In Dish öffnen (Testphase)</a><br><small>Funktioniert mit Expo Go im selben WLAN.</small>';
+    dev += '<a class="b" href="exp://' + t + '/--/r/' + code + '">In Dish öffnen (Testphase)</a><br><small>Funktioniert mit Expo Go im selben WLAN.</small><br><br>';
   }
+  if (code) {
+    dev += '<small>Klappt der Knopf nicht? Öffne Dish in Expo Go und gib unten bei „Code aus Einladung“ diesen Code ein:</small><br><code>' + code + '</code>';
+  }
+  document.getElementById('dev').innerHTML = dev;
   document.getElementById('store').innerHTML = store
     ? '<a class="b" href="' + store + '">Dish im App Store laden</a>'
     : '<b>Dish kommt bald in den App Store.</b>';
