@@ -1,1 +1,112 @@
-<!doctype html><html lang=de><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Dish – Dish</title><style>body{font-family:-apple-system,Helvetica,Arial,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px;color:#3A2A21;background:#FFF4E8;line-height:1.55}h1{color:#F2682A}h2{margin-top:28px}a{color:#F2682A}nav a{margin-right:14px}</style></head><body><nav><a href=index.html>Dish</a><a href=datenschutz.html>Datenschutz</a><a href=nutzungsbedingungen.html>Nutzungsbedingungen</a><a href=impressum.html>Impressum</a><a href=support.html>Support</a></nav><h1>Dish</h1><p>Dish hilft dir allein oder in der Gruppe, ein Lokal auszuwählen. Eine Runde swipen, ein Match entscheidet.</p><p>Datenschutz, Nutzungsbedingungen und Support findest du oben im Menü.</p></body></html>
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#F2682A"><link rel=icon href="/icon.png"><title>Dish – Wo essen wir heute?</title><meta name=description content="Dish: Swipen, matchen, essen gehen. Gemeinsam in einer Minute entscheiden, wo ihr essen geht."><style>:root{--o:#F2682A;--o2:#D9541A;--cream:#FFF4E8;--plate:#FFFAF3;--ink:#3A2A21;--soft:#8C6F5C;--line:#F3D9C2;--card:#FFFFFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:ui-rounded,-apple-system,"SF Pro Rounded","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px}
+a{color:var(--o2)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1040px;margin:0 auto;padding:18px 20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.plate{width:38px;height:38px;border-radius:50%;background:var(--o);display:grid;place-items:center;flex:0 0 auto}
+.plate span{width:30px;height:30px;border-radius:50%;background:var(--plate);box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 4px var(--line);display:grid;place-items:center;color:var(--o);font-weight:800;font-size:10px;letter-spacing:-.02em}
+.menu{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.menu a{text-decoration:none;color:var(--soft);font-weight:600;font-size:14px;padding:6px 10px;border-radius:99px}
+.menu a:hover,.menu a[aria-current]{background:#fff;color:var(--ink)}
+.doc{max-width:720px;margin:0 auto;padding:8px 20px 64px}
+.doc article{background:var(--card);border-radius:24px;padding:28px 24px;box-shadow:0 1px 0 var(--line),0 18px 40px -28px rgba(120,60,20,.35)}
+.doc h1{font-size:34px;line-height:1.15;margin:0 0 12px;letter-spacing:-.02em;color:var(--ink)}
+.doc h2{font-size:20px;margin:28px 0 6px;color:var(--o2)}
+.doc p{margin:0 0 12px}
+footer{max-width:1040px;margin:0 auto;padding:24px 20px 40px;color:var(--soft);font-size:14px;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between}
+footer nav{display:flex;gap:14px;flex-wrap:wrap}
+footer a{color:var(--soft)}
+@media (max-width:560px){.menu{display:none}.doc article{padding:22px 18px}.doc h1{font-size:28px}}
+.home{max-width:1040px;margin:0 auto;padding:0 20px 24px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:28px 0 48px}
+.pill{display:inline-block;background:#fff;color:var(--o2);font-weight:700;font-size:13px;padding:6px 12px;border-radius:99px;box-shadow:0 1px 0 var(--line)}
+.hero h1{font-size:clamp(36px,5.6vw,60px);line-height:1.04;letter-spacing:-.03em;margin:16px 0 14px}
+.hero h1 em{font-style:normal;color:var(--o)}
+.lead{font-size:19px;color:var(--soft);max-width:30em;margin:0 0 24px}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.store a,.store span.soon{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:16px}
+.store span.soon{background:var(--o)}
+.small{color:var(--soft);font-size:14px}
+.phone{justify-self:center;width:min(300px,78vw);aspect-ratio:9/18.5;background:#2B1F18;border-radius:44px;padding:12px;box-shadow:0 30px 60px -30px rgba(120,50,10,.55)}
+.screen{position:relative;height:100%;border-radius:34px;background:var(--cream);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px}
+.stack,.dcard{position:absolute;left:16px;right:16px;top:12%;height:58%;border-radius:24px;background:#fff}
+.stack.s3{transform:translateY(-14px) scale(.9);opacity:.5}
+.stack.s2{transform:translateY(-7px) scale(.95);opacity:.75}
+.dcard{box-shadow:0 14px 30px -18px rgba(120,60,20,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;padding:16px;transform:rotate(-3deg);animation:wig 4s ease-in-out infinite}
+@keyframes wig{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(2deg) translateX(6px)}}
+.dcard .em{font-size:54px;line-height:1.1}
+.dcard b{font-size:19px}
+.dcard .cat{color:var(--soft);font-size:14px}
+.dcard .where{font-weight:700;font-size:13px}
+.dcard .open{font-size:12px;color:#2E8A62;background:#E6F4EC;border-radius:99px;padding:3px 10px;margin-top:4px}
+.btns{position:absolute;bottom:13%;display:flex;gap:26px}
+.btns span{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:#fff;box-shadow:0 8px 18px -10px rgba(120,60,20,.6)}
+.btns .no{color:var(--soft)}.btns .yes{color:#fff;background:var(--o)}
+.match{position:absolute;bottom:4%;background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:6px 14px;border-radius:99px}
+.steps{padding:12px 0 36px}
+.steps h2,.feats h2{font-size:30px;letter-spacing:-.02em;margin:0 0 18px}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.steps li{background:#fff;border-radius:22px;padding:22px 20px;box-shadow:0 1px 0 var(--line)}
+.steps .n{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--o);color:#fff;font-weight:800;margin-bottom:10px}
+.steps b{font-size:18px}.steps p{margin:6px 0 0;color:var(--soft)}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:6px 0 36px}
+.feats div{background:var(--plate);border:1px solid var(--line);border-radius:20px;padding:18px}
+.feats span{font-size:26px}.feats b{display:block;margin-top:6px}.feats p{margin:4px 0 0;color:var(--soft);font-size:15px}
+.note{background:var(--o);color:#fff;border-radius:26px;padding:24px 24px 14px}
+.note a{color:#fff;font-weight:700}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:28px;padding-top:12px}.phone{width:min(260px,70vw)}.steps ol,.feats{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.dcard{animation:none}}
+</style></head><body><header class=top><a class=brand href="/"><span class=plate><span>dish</span></span>Dish</a><nav class=menu><a href="/support.html">Support</a><a href="/datenschutz.html">Datenschutz</a><a href="/nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="/impressum.html">Impressum</a></nav></header><main class="home">
+  <section class="hero">
+    <div class="hero-txt">
+      <span class="pill">Neu in Linz · gratis</span>
+      <h1>Wo essen wir heute?<br><em>Swipen statt streiten.</em></h1>
+      <p class="lead">Ihr swipt beide durch 10 Lokale in eurer Nähe. Wenn ihr dasselbe mögt, ist es ein Match. Gibt es mehrere, entscheidet das Roulette. In einer Minute ist alles geklärt.</p>
+      <div class="cta">
+        <span class="store"><span class=soon>Bald im App Store</span></span>
+        <span class="small">Kein Konto, keine Anmeldung.</span>
+      </div>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <div class="stack s3"></div>
+        <div class="stack s2"></div>
+        <div class="dcard">
+          <div class="em">🍝</div>
+          <b>Kleine Trattoria</b>
+          <span class="cat">Italienisch</span>
+          <span class="where">📍 Innere Stadt · 0,4 km entfernt</span>
+          <span class="open">Geöffnet bis 22:00</span>
+        </div>
+        <div class="btns"><span class="no">✕</span><span class="yes">♥</span></div>
+        <div class="match">It's a Match! 🎉</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <h2>So einfach geht's</h2>
+    <ol>
+      <li><span class="n">1</span><b>Ort &amp; Zeit wählen</b><p>Jetzt, heute Abend oder morgen Mittag. Dish zeigt nur Lokale, die dann offen haben.</p></li>
+      <li><span class="n">2</span><b>10 Karten swipen</b><p>Herz oder X. Zu zweit gebt ihr das Handy weiter oder schickt euch einen Link.</p></li>
+      <li><span class="n">3</span><b>Match &amp; los</b><p>Ihr seht sofort, wo ihr euch einig seid. Ein Tipp öffnet den Weg in Google Maps.</p></li>
+    </ol>
+  </section>
+
+  <section class="feats">
+    <div><span>🕐</span><b>Öffnungszeiten</b><p>Was zur gewählten Zeit sicher zu hat, kommt gar nicht erst ins Spiel.</p></div>
+    <div><span>📍</span><b>Viertel &amp; Entfernung</b><p>Auf jeder Karte steht, wo das Lokal liegt und wie weit es weg ist.</p></div>
+    <div><span>💌</span><b>Per Link mitspielen</b><p>Dein Schatz ist noch im Büro? Link schicken, er swipt dieselben Karten.</p></div>
+    <div><span>⭐</span><b>Eure Lieblinge</b><p>Bis zu 3 eigene Lieblingslokale mischen sich in jede Runde.</p></div>
+    <div><span>🌱</span><b>Vegetarisch zuerst</b><p>Wenn ihr wollt, kommen vegetarische und vegane Lokale nach vorne.</p></div>
+    <div><span>🔒</span><b>Ohne Konto</b><p>Keine Anmeldung, kein Tracking. Deine Daten löschst du jederzeit in der App.</p></div>
+  </section>
+
+  <section class="note">
+    <p><b>Gestartet in Linz.</b> Mehr Städte in Oberösterreich und ganz Österreich folgen Schritt für Schritt.</p>
+    <p>Fragen oder Ideen? Schreib uns an <a href="mailto:dish.hilfe@gmail.com">dish.hilfe@gmail.com</a>.</p>
+  </section>
+</main>
+<footer><span>© 2026 Dish · Edina Hotea, Linz, Österreich</span><nav><a href="/support.html">Support</a><a href="/datenschutz.html">Datenschutz</a><a href="/nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="/impressum.html">Impressum</a></nav></footer></body></html>
