@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /r/
+Sitemap: https://dishsupport.github.io/sitemap.xml
