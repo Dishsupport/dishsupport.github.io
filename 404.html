@@ -19,41 +19,198 @@ footer{max-width:1040px;margin:0 auto;padding:24px 20px 40px;color:var(--soft);f
 footer nav{display:flex;gap:14px;flex-wrap:wrap}
 footer a{color:var(--soft)}
 @media (max-width:560px){.menu{display:none}.doc article{padding:22px 18px}.doc h1{font-size:28px}}
-.inv{max-width:560px;margin:0 auto;padding:12px 20px 48px}
-.invcard{background:#fff;border-radius:28px;padding:32px 24px;text-align:center;box-shadow:0 1px 0 var(--line),0 24px 50px -30px rgba(120,60,20,.45)}
-.invcard h1{font-size:34px;letter-spacing:-.02em;margin:10px 0 8px}
-.invcard p{color:var(--soft)}
-.bigplate{width:96px;height:96px;margin:0 auto;border-radius:50%;background:var(--o);display:grid;place-items:center}
-.bigplate span{width:76px;height:76px;border-radius:50%;background:var(--plate);box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 7px var(--line);display:grid;place-items:center;font-size:34px}
-a.b{display:inline-block;background:var(--o);color:#fff;padding:14px 22px;border-radius:16px;text-decoration:none;font-weight:700;margin:8px}
-code{font-size:28px;letter-spacing:2px;background:var(--cream);padding:8px 14px;border-radius:12px;display:inline-block;margin:8px 0;color:var(--ink)}
-</style></head><body><header class=top><a class=brand href="/"><span class=plate><span>dish</span></span>Dish</a><nav class=menu><a href="/support.html">Support</a><a href="/datenschutz.html">Datenschutz</a><a href="/nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="/impressum.html">Impressum</a></nav></header><main class="inv"><div id="invite" class="invcard" hidden>
-  <div class="bigplate"><span>🎲</span></div>
-  <h1>Wohin essen?</h1>
-  <p>Du wurdest zu einer Runde Dish eingeladen: 10 Lokale swipen, ein Match entscheidet.</p>
-  <p id="dev"></p>
-  <p id="store"></p>
-</div>
-<div id="nf" class="invcard" hidden>
-  <h1>Seite nicht gefunden</h1>
-  <p><a class="b" href="/">Zur Startseite</a></p>
-</div></main>
+.inv{max-width:520px;margin:0 auto;padding:4px 16px 48px}
+.invcard{background:#fff;border-radius:28px;padding:28px 20px;text-align:center;box-shadow:0 1px 0 var(--line),0 24px 50px -30px rgba(120,60,20,.45)}
+.invcard h1{font-size:30px;line-height:1.15;letter-spacing:-.02em;margin:10px 0 8px}
+.invcard p{color:var(--soft);margin:8px 0}
+.bigplate{width:88px;height:88px;margin:0 auto;border-radius:50%;background:var(--o);display:grid;place-items:center}
+.bigplate span{width:70px;height:70px;border-radius:50%;background:var(--plate);box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 7px var(--line);display:grid;place-items:center;font-size:32px}
+a.b,button.b{display:block;width:100%;border:0;background:var(--o);color:#fff;padding:15px 22px;border-radius:16px;text-decoration:none;font:inherit;font-weight:800;margin:10px 0 0;cursor:pointer}
+a.g,button.g{display:block;width:100%;border:0;background:#FDE7DA;color:#C24E15;padding:13px 22px;border-radius:16px;text-decoration:none;font:inherit;font-weight:700;margin:10px 0 0;cursor:pointer}
+input.n{width:100%;font:inherit;font-size:17px;padding:14px;border-radius:14px;border:1px solid var(--line);margin-top:14px;background:#fff}
+code{font-size:22px;letter-spacing:2px;background:var(--cream);padding:6px 12px;border-radius:12px;display:inline-block;margin:6px 0;color:var(--ink)}
+.pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:14px;color:var(--soft);margin-bottom:10px}
+.head{display:flex;justify-content:space-between;color:var(--soft);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin:4px 4px 8px}
+.prog{display:flex;gap:4px;margin:0 2px 14px}.prog i{flex:1;height:5px;border-radius:9px;background:#F1DFCF}.prog i.on{background:var(--o)}
+.card{background:#fff;border-radius:28px;padding:30px 20px;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;box-shadow:0 18px 40px -26px rgba(120,60,20,.5);touch-action:pan-y;user-select:none;transition:transform .22s ease}
+.emo{width:116px;height:116px;border-radius:50%;background:#FFEFE3;display:grid;place-items:center;font-size:58px}
+.card h2{font-size:27px;line-height:1.2;margin:10px 0 0;letter-spacing:-.01em}
+.card .w{color:var(--soft);font-size:15px}
+.chip{display:inline-block;background:#F6EEE6;border-radius:99px;padding:5px 14px;font-size:14px;color:#6F5646;font-weight:700}
+.btns{display:flex;justify-content:center;align-items:center;gap:22px;margin:22px 0 6px}
+.rb{width:72px;height:72px;border-radius:50%;border:0;font-size:30px;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 24px -14px rgba(120,60,20,.6)}
+.rb.no{background:#fff;color:#A08C7D}.rb.yes{background:var(--o);color:#fff}.rb.sup{width:56px;height:56px;background:#fff;border:2.5px solid #F2B230;color:#E9A215;font-size:24px}
+.rb.sup:disabled{opacity:.3}
+.hint{text-align:center;color:#B7A08F;font-size:13px}
+.row{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-top:8px;text-align:left}
+.row b{flex:1}.row span.v{color:var(--o);font-weight:800}
+.names{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}.names span{background:#EAF4EC;color:#2E7D4F;border-radius:99px;padding:4px 12px;font-size:14px;font-weight:700}
+.small{font-size:14px;color:var(--soft)}
+</style></head><body><header class=top><a class=brand href="/"><span class=plate><span>dish</span></span>Dish</a><nav class=menu><a href="/support.html">Support</a><a href="/datenschutz.html">Datenschutz</a><a href="/nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="/impressum.html">Impressum</a></nav></header><main class="inv" id="app"><div class="invcard"><div class="bigplate"><span>🎲</span></div><h1>Einen Moment …</h1></div></main>
 <script>
-  var store = '';
-  var isInvite = /\/r\/[0-9a-f]{12}/.test(location.pathname);
-  document.getElementById(isInvite ? 'invite' : 'nf').hidden = false;
+(function () {
+  var STORE = '', SB = 'https://hqzaaqiyfpjxuopvtcnx.supabase.co', KEY = 'sb_publishable__01qqgqzFWjB07ZnPja0ww_i1gU18zE';
+  var K = {"exact":{"steak_house":["Steakhouse","🥩"],"steakhouse":["Steakhouse","🥩"],"bar_and_grill_restaurant":["Grill","🍖"],"barbecue_restaurant":["Grill","🍖"],"barbecue":["Grill","🍖"],"grill":["Grill","🍖"],"gastropub":["Wirtshaus","🍺"],"tavern":["Wirtshaus","🍺"],"regional":["Österreichisch","🥨"],"local":["Österreichisch","🥨"],"austrian_restaurant":["Österreichisch","🥨"],"austrian":["Österreichisch","🥨"],"buschenschank":["Heuriger","🍷"],"heuriger":["Heuriger","🍷"],"wine_bar":["Weinbar","🍷"],"wine":["Weinbar","🍷"],"cocktail_bar":["Cocktailbar","🍸"],"beer_bar":["Bierbar","🍺"],"irish_pub":["Pub","🍺"],"dive_bar":["Bar","🍸"],"sports_bar":["Bar","🍸"],"hookah_bar":["Lounge","🛋️"],"speakeasy":["Bar","🍸"],"tapas_bar":["Tapas","🥘"],"tapas":["Tapas","🥘"],"spanish_restaurant":["Tapas","🥘"],"health_food_restaurant":["Bowls & Salate","🥗"],"bowl":["Bowls & Salate","🥗"],"beef_bowl":["Bowls & Salate","🥗"],"salad":["Bowls & Salate","🥗"],"hot_dog_restaurant":["Würstelstand","🌭"],"sausage":["Würstelstand","🌭"],"meatloaf":["Leberkäse","🥪"],"dessert_shop":["Süßes","🍩"],"donut_shop":["Süßes","🍩"],"donut":["Süßes","🍩"],"dessert":["Süßes","🍩"],"pastry":["Süßes","🍩"],"frozen_yogurt_shop":["Eis","🍦"],"gelato_shop":["Eis","🍦"],"ice_cream_shop":["Eis","🍦"],"ice_cream":["Eis","🍦"],"cake":["Café","🍰"],"coffee_shop":["Café","☕"],"coffee":["Café","☕"],"cafe":["Café","☕"],"bubble_tea":["Bubble Tea","🧋"],"european_restaurant":["Europäisch","🍽️"],"scandinavian_restaurant":["Skandinavisch","🍽️"],"scandinavian":["Skandinavisch","🍽️"],"french_restaurant":["Französisch","🥐"],"french":["Französisch","🥐"],"belgian":["Belgisch","🍟"],"mediterranean_restaurant":["Mediterran","🫒"],"mediterranean":["Mediterran","🫒"],"arabian_restaurant":["Orientalisch","🧆"],"arab":["Orientalisch","🧆"],"syrian_restaurant":["Orientalisch","🧆"],"middle_eastern_restaurant":["Orientalisch","🧆"],"middle_eastern":["Orientalisch","🧆"],"levantine":["Orientalisch","🧆"],"persian":["Orientalisch","🧆"],"lebanese":["Orientalisch","🧆"],"balkan":["Balkan","🥩"],"serbian":["Balkan","🥩"],"bosnian":["Balkan","🥩"],"croatian":["Balkan","🥩"],"polish_restaurant":["Osteuropäisch","🥟"],"polish":["Osteuropäisch","🥟"],"russian":["Osteuropäisch","🥟"],"uzbek":["Osteuropäisch","🥟"],"usbekisch":["Osteuropäisch","🥟"],"african_restaurant":["Afrikanisch","🍲"],"african":["Afrikanisch","🍲"],"american_restaurant":["Amerikanisch","🍔"],"american":["Amerikanisch","🍔"],"chicken_restaurant":["Chicken","🍗"],"chicken":["Chicken","🍗"],"fried_chicken":["Chicken","🍗"],"fish_and_chips":["Fisch","🐟"],"fish":["Fisch","🐟"],"friture":["Fast Food","🍟"],"snackbar":["Imbiss","🥪"],"roll":["Imbiss","🥪"],"texmex_restaurant":["Mexikanisch","🌮"],"mongolian_restaurant":["Asiatisch","🥟"],"pan_asian_restaurant":["Asiatisch","🥟"],"ramen_restaurant":["Ramen","🍜"],"ramen":["Ramen","🍜"],"hotpot":["Chinesisch","🥡"],"sichuan":["Chinesisch","🥡"],"nepal":["Nepalesisch","🍛"],"nepalese":["Nepalesisch","🍛"],"curry":["Indisch","🍛"],"pasta":["Italienisch","🍝"],"delicatessen":["Feinkost","🧀"],"fine_dining":["Fine Dining","✨"],"international":["International","🌍"],"halal_restaurant":["Restaurant","🍽️"],"bistro":["Bistro","🍽️"]},"teil":[["pizza","Pizza","🍕"],["italian","Italienisch","🍝"],["sushi","Sushi","🍣"],["japanese","Japanisch","🍱"],["chinese","Chinesisch","🥡"],["indian","Indisch","🍛"],["thai","Thailändisch","🍜"],["vietnam","Vietnamesisch","🍜"],["korean","Koreanisch","🥘"],["asian","Asiatisch","🥟"],["turkish","Türkisch","🥙"],["kebab","Kebab","🥙"],["falafel","Falafel","🧆"],["greek","Griechisch","🥙"],["mexican","Mexikanisch","🌮"],["burger","Burger","🍔"],["fast_food","Fast Food","🍟"],["steak","Steakhouse","🥩"],["seafood","Fisch","🐟"],["vegan","Vegan","🌱"],["vegetarian","Vegetarisch","🥗"],["austrian","Österreichisch","🥨"],["german","Deutsch","🥨"],["bakery","Bäckerei","🥐"],["coffee","Café","☕"],["cafe","Café","☕"],["brunch","Brunch","🥞"],["breakfast","Frühstück","🥞"],["ice_cream","Eis","🍦"],["pub","Pub","🍺"],["brewery","Brauerei","🍺"],["bar","Bar","🍸"],["bistro","Bistro","🍽️"],["diner","Diner","🍔"],["tavern","Wirtshaus","🍺"],["buffet","Buffet","🍽️"],["sandwich","Sandwich","🥪"],["salad","Bowls & Salate","🥗"],["soup","Suppen","🍲"],["noodle","Nudeln","🍜"]],"allgemein":["Restaurant","Bar","Pub","Bistro","Buffet","Café","Fast Food","Imbiss","Lounge","Bierbar","Cocktailbar","International","Asiatisch","Italienisch","Österreichisch"]}, KORR = { "b8874d74-27ad-43da-8c86-60a461c9e28b": "sushi" };
+  var app = document.getElementById('app');
   var code = (location.pathname.match(/\/r\/([0-9a-f]{12})/) || [])[1];
   var t = new URLSearchParams(location.search).get('t');
+  function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function show(h) { app.innerHTML = h; window.scrollTo(0, 0); }
+  if (!code) { show('<div class="invcard"><h1>Seite nicht gefunden</h1><p><a class="b" href="/">Zur Startseite</a></p></div>'); return; }
+
+  // Zufaellige Kennung nur fuer diesen Browser (kein Konto, keine Cookies von Dritten)
   var dev = '';
-  if (code && t && /^[0-9a-z.\-]+(:[0-9]+)?$/i.test(t)) {
-    dev += '<a class="b" href="exp://' + t + '/--/r/' + code + '">In Dish öffnen (Testphase)</a><br><small>Funktioniert mit Expo Go im selben WLAN.</small><br><br>';
+  try { dev = localStorage.getItem('dish_dev') || ''; } catch (e) {}
+  if (!dev) { dev = 'w' + Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2); try { localStorage.setItem('dish_dev', dev); } catch (e) {} }
+  function rpc(fn, body) {
+    return fetch(SB + '/rest/v1/rpc/' + fn, { method: 'POST', headers: { apikey: KEY, 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { if (!r.ok) throw new Error(fn); return r.text(); }).then(function (x) { return x ? JSON.parse(x) : null; });
   }
-  if (code) {
-    dev += '<small>Klappt der Knopf nicht? Öffne Dish in Expo Go und gib unten bei „Code aus Einladung“ diesen Code ein:</small><br><code>' + code + '</code>';
+
+  // Kategorie wie in der App (src/kategorien.json)
+  var EMO = {}; Object.keys(K.exact).forEach(function (k) { var v = K.exact[k]; if (!EMO[v[0]]) EMO[v[0]] = v[1]; });
+  K.teil.forEach(function (x) { if (!EMO[x[1]]) EMO[x[1]] = x[2]; });
+  function look(v) { var s = String(v || '').toLowerCase(); if (!s) return null; var p = s.split(/[;, ]+/);
+    for (var i = 0; i < p.length; i++) { if (K.exact[p[i]]) return K.exact[p[i]][0]; for (var j = 0; j < K.teil.length; j++) if (p[i].indexOf(K.teil[j][0]) >= 0) return K.teil[j][1]; } return null; }
+  function label(r) { var f = look(r.kategorie_fix || KORR[r.id]), a = look(r.kueche), b = look(r.kategorie);
+    var al = K.allgemein.indexOf(a) >= 0, bl = K.allgemein.indexOf(b) >= 0;
+    var l = f || (a && !(al && b && !bl) ? a : b || a) || 'Restaurant'; return [l, EMO[l] || '🍽️']; }
+  function hm(iso) { var d = new Date(iso); return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2); }
+  function street(a) { return String(a || '').split(',')[0].replace(/\s+\d.*$/, '').trim(); }
+
+  var round, cards = [], i = 0, yes = [], sup = null, name = '';
+  try { name = localStorage.getItem('dish_name') || ''; } catch (e) {}
+  var votedKey = 'dish_voted_' + code;
+
+  rpc('get_shared_round', { p_code: code }).then(function (r) {
+    if (!r) return show('<div class="invcard"><h1>Einladung nicht gefunden</h1><p>Diese Runde gibt es nicht (mehr).</p>' + cta() + '</div>');
+    if (r.expired) return show('<div class="invcard"><h1>Abgelaufen ⏰</h1><p>Diese Einladung ist leider schon abgelaufen.</p>' + cta() + '</div>');
+    round = r;
+    var voted = false; try { voted = localStorage.getItem(votedKey) === '1'; } catch (e) {}
+    if (voted) return wait();
+    return loadCards().then(intro);
+  }).catch(function () { show('<div class="invcard"><h1>Hoppla</h1><p>Die Einladung konnte gerade nicht geladen werden. Prüf deine Internetverbindung und lade die Seite neu.</p></div>'); });
+
+  function loadCards() {
+    var ids = round.deck.filter(function (x) { return x.id.indexOf('fav:') !== 0; }).map(function (x) { return '"' + x.id.replace(/"/g, '') + '"'; });
+    var q = SB + '/rest/v1/places?select=id,name,kategorie,kueche,kategorie_fix,adresse,ort,lat,lon&id=in.(' + encodeURIComponent(ids.join(',')) + ')';
+    return fetch(q, { headers: { apikey: KEY } }).then(function (r) { return r.json(); }).catch(function () { return []; }).then(function (list) {
+      var by = {}; (list || []).forEach(function (p) { by[p.id] = p; });
+      cards = round.deck.map(function (x) {
+        if (x.id.indexOf('fav:') === 0) return { id: x.id, n: x.n || 'Lieblingslokal', c: 'Lieblingslokal', e: '⭐' };
+        var p = by[x.id]; if (!p) return null; var l = label(p);
+        return { id: x.id, n: p.name, c: l[0], e: l[1], str: street(p.adresse), ort: p.ort, la: p.lat, lo: p.lon };
+      }).filter(Boolean);
+    });
   }
-  document.getElementById('dev').innerHTML = dev;
-  document.getElementById('store').innerHTML = store
-    ? '<a class="b" href="' + store + '">Dish im App Store laden</a>'
-    : '<b>Dish kommt bald in den App Store.</b>';
+
+  function cta() {
+    return '<p class="small" style="margin-top:22px">Für eure nächste Runde:</p>' + (STORE ? '<a class="g" href="' + STORE + '">Dish im App Store laden</a>' : '<p><b>Dish kommt bald in den App Store.</b></p>');
+  }
+
+  function intro() {
+    var grp = (round.size || 2) > 2, who = esc(round.creator_name || (grp ? 'Deine Gruppe' : 'Dein Freund'));
+    var devLink = t && /^[0-9a-z.\-]+(:[0-9]+)?$/i.test(t) ? '<a class="g" href="exp://' + t + '/--/r/' + code + '">In Dish öffnen (Testphase)</a>' : '';
+    show('<div class="invcard"><div class="bigplate"><span>' + (grp ? '👥' : '🎲') + '</span></div>' +
+      '<h1>' + who + (grp ? ' lädt dich ein' : ' hat schon gewählt 👀') + '</h1>' +
+      '<p>' + (grp ? (round.open ? 'Swipe ' + cards.length + ' Lokale. ' + (round.closes_at ? 'Bis ' + hm(round.closes_at) + ' stimmt die Gruppe ab, ' : '') + 'die meisten Stimmen gewinnen.' : 'Ihr seid ' + round.size + '. Jede Person swipt dieselben ' + cards.length + ' Lokale, die meisten Stimmen gewinnen.') : 'Swipe dieselben ' + cards.length + ' Lokale. Wenn ihr beide Ja sagt, habt ihr ein Match.') + '</p>' +
+      '<input class="n" id="nm" maxlength="30" placeholder="Dein Vorname" value="' + esc(name) + '">' +
+      '<button class="b" id="go">Im Browser mitmachen</button>' + devLink +
+      (STORE ? '<a class="g" href="' + STORE + '">Lieber mit der App</a>' : '') +
+      '<p class="small" style="margin-top:14px">Ohne Anmeldung, ohne Download.</p></div>');
+    document.getElementById('go').onclick = function () {
+      name = document.getElementById('nm').value.trim();
+      if (grp && !name) { document.getElementById('nm').focus(); document.getElementById('nm').placeholder = 'Bitte gib deinen Vornamen ein'; return; }
+      try { localStorage.setItem('dish_name', name); } catch (e) {}
+      i = 0; yes = []; sup = null; card();
+    };
+  }
+
+  function card() {
+    if (i >= cards.length) return send();
+    var c = cards[i], prog = '';
+    for (var k = 0; k < cards.length; k++) prog += '<i class="' + (k <= i ? 'on' : '') + '"></i>';
+    show('<div class="head"><span>' + (name ? esc(name) + ' wählt' : 'Deine Wahl') + '</span><span>' + (i + 1) + ' / ' + cards.length + '</span></div><div class="prog">' + prog + '</div>' +
+      '<div class="card" id="cd"><div class="emo">' + c.e + '</div><h2>' + esc(c.n) + '</h2>' +
+      (c.str ? '<div class="w">📍 ' + esc(c.str) + '</div>' : '') + '<span class="chip">' + esc(c.c) + '</span>' +
+      (c.la ? '<a class="w" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.n + ', ' + (c.ort || 'Linz')) + '">Auf Google Maps ansehen ↗</a>' : '') + '</div>' +
+      '<div class="btns"><button class="rb no" id="no" aria-label="Nein">✕</button><button class="rb sup" id="su" aria-label="Superlike"' + (sup ? ' disabled' : '') + '>★</button><button class="rb yes" id="ye" aria-label="Ja">♥</button></div>' +
+      (i === 0 ? '<p class="hint">♥ = Ja, ✕ = Nein, ★ = Superlike (1 pro Runde) · Wischen geht auch</p>' : ''));
+    var el = document.getElementById('cd');
+    function go(like, s) {
+      if (s) { sup = c.id; like = true; }
+      if (like) yes.push(c.id);
+      el.style.transform = 'translateX(' + (like ? 140 : -140) + '%) rotate(' + (like ? 12 : -12) + 'deg)';
+      setTimeout(function () { i++; card(); }, 200);
+    }
+    document.getElementById('no').onclick = function () { go(false); };
+    document.getElementById('ye').onclick = function () { go(true); };
+    document.getElementById('su').onclick = function () { go(true, true); };
+    var x0 = null;
+    el.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+    el.addEventListener('pointermove', function (e) { if (x0 !== null) el.style.transform = 'translateX(' + (e.clientX - x0) + 'px) rotate(' + (e.clientX - x0) / 20 + 'deg)'; });
+    el.addEventListener('pointerup', function (e) { if (x0 === null) return; var d = e.clientX - x0; x0 = null; if (Math.abs(d) > 90) go(d > 0); else el.style.transform = ''; });
+  }
+
+  function send() {
+    show('<div class="invcard"><div class="bigplate"><span>📨</span></div><h1>Wird gesendet …</h1></div>');
+    rpc('submit_votes2', { p_code: code, p_device: dev, p_yes: sup ? yes.concat(['super:' + sup]) : yes, p_name: name || null }).then(function (r) {
+      if (!r || r.expired) return show('<div class="invcard"><h1>Abgelaufen ⏰</h1><p>Diese Einladung ist leider abgelaufen.</p>' + cta() + '</div>');
+      if (r.full) return show('<div class="invcard"><h1>Schon fertig</h1><p>Diese Runde hat schon fertig abgestimmt.</p>' + cta() + '</div>');
+      try { localStorage.setItem(votedKey, '1'); } catch (e) {}
+      result(r);
+    }).catch(function () { show('<div class="invcard"><h1>Hoppla</h1><p>Deine Stimmen konnten nicht gesendet werden.</p><button class="b" id="again">Nochmal senden</button></div>'); document.getElementById('again').onclick = send; });
+  }
+
+  var timer = null, shownRev = '';
+  function wait() {
+    if (!cards.length) { loadCards().then(wait); return; }
+    rpc('get_result', { p_code: code }).then(function (r) { result(r); }).catch(function () {});
+  }
+  function result(r) {
+    if (timer) { clearTimeout(timer); timer = null; }
+    if (!r) return;
+    var names = (r.names || []).map(function (n) { return '<span>✅ ' + esc(n || 'Gast') + '</span>'; }).join('');
+    if (!r.done) {
+      var by0 = {}; cards.forEach(function (c) { by0[c.id] = c; });
+      var lead = (r.tally || [])[0] && by0[r.tally[0].id] ? '<p><b>' + by0[r.tally[0].id].e + ' ' + esc(by0[r.tally[0].id].n) + ' liegt vorne mit ' + r.tally[0].y + ' ♥</b></p>' : '';
+      var txt = r.open ? (r.votes || 0) + ((r.votes || 0) === 1 ? ' hat' : ' haben') + ' gewählt.' + (r.closes_at ? ' Das Ergebnis kommt um ' + hm(r.closes_at) + ' oder sobald alle da sind.' : '') : (r.votes || 0) + ' von ' + (r.size || 2) + ' sind fertig. Das Ergebnis erscheint hier automatisch, sobald alle gewählt haben.';
+      show('<div class="invcard"><div class="bigplate"><span>⏳</span></div><h1>Danke' + (name ? ', ' + esc(name) : '') + '!</h1>' + (r.rev ? '<p class="small">Update: Es ist noch jemand dazugekommen.</p>' : '') + '<p>' + txt + '</p>' + lead + '<div class="names">' + names + '</div>' + cta() + '</div>');
+      timer = setTimeout(wait, 3000); return;
+    }
+    var by = {}; cards.forEach(function (c) { by[c.id] = c; });
+    var ids = (r.matches || []).filter(function (x) { return x.indexOf('super:') !== 0; }).filter(function (x) { return by[x]; });
+    var tally = (r.tally || []).slice(0, 6).map(function (x) { var c = by[x.id]; return c ? '<div class="row"><span>' + c.e + '</span><b>' + esc(c.n) + '</b><span class="v">♥ ' + x.y + (x.s ? ' ★ ' + x.s : '') + '</span></div>' : ''; }).join('');
+    var pick = r.pick && by[r.pick] ? by[r.pick] : ids.length === 1 ? by[ids[0]] : null;
+    var maps = function (c) { return '<a class="b" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.n + ', ' + (c.ort || 'Linz')) + '">Route in Google Maps</a>'; };
+    var votes = (r.tally || []).filter(function (x) { return pick && x.id === pick.id; })[0];
+    if (pick && r.group && shownRev !== (r.rev || 0) + ':' + pick.id) {
+      // Jeder hat seinen Roulette-Moment: kurz durch die Favoriten wirbeln, dann das Ergebnis
+      shownRev = (r.rev || 0) + ':' + pick.id;
+      var pool = (r.tally || []).map(function (x) { return by[x.id]; }).filter(Boolean).slice(0, 6); if (pool.length < 2) pool = cards.slice(0, 4);
+      show('<div class="invcard"><div class="bigplate"><span id="sp">🎲</span></div><h1>Die Gruppe hat gewählt</h1><p id="spn">…</p></div>');
+      var k = 0, n = 0, iv = setInterval(function () { var c = pool[k++ % pool.length]; document.getElementById('sp').textContent = c.e; document.getElementById('spn').textContent = c.n;
+        if (++n > 22) { clearInterval(iv); result(r); } }, 90 + n * 6);
+      return;
+    }
+    if (pick && r.group) timer = setTimeout(wait, 5000); // kommt noch jemand dazu? -> Update
+    if (pick) return show('<div class="invcard"><h1>Match! 🎉</h1>' + (votes ? '<p><b>' + votes.y + ' von ' + r.votes + ' wollen ins ' + esc(pick.n) + '</b></p>' : '') +
+      '<div class="card" style="min-height:0;box-shadow:none"><div class="emo">' + pick.e + '</div><h2>' + esc(pick.n) + '</h2>' + (pick.str ? '<div class="w">📍 ' + esc(pick.str) + '</div>' : '') + '<span class="chip">' + esc(pick.c) + '</span></div>' +
+      maps(pick) + (tally ? '<p class="small" style="margin-top:18px">So wurde abgestimmt</p>' + tally : '') + cta() + '</div>');
+    if (ids.length === 0) return show('<div class="invcard"><h1>Kein Match 😅</h1><p>' + (r.group ? 'Kein Lokal hat mindestens 2 Stimmen bekommen.' : 'Diesmal hat nichts gepasst.') + ' Probiert es mit einer neuen Runde.</p>' + tally + cta() + '</div>');
+    show('<div class="invcard"><div class="bigplate"><span>🎲</span></div><h1>' + ids.length + (r.group ? ' Lokale gleichauf!' : ' Matches!') + '</h1><p>Das Rad entscheidet. Wer zuerst dreht, entscheidet für alle.</p>' +
+      ids.map(function (x) { return '<div class="row"><span>' + by[x].e + '</span><b>' + esc(by[x].n) + '</b></div>'; }).join('') +
+      '<button class="b" id="spin">🎲 Rad drehen</button>' + tally + '</div>');
+    document.getElementById('spin').onclick = function () {
+      var b = this; b.disabled = true; var k = 0, n = 0;
+      var iv = setInterval(function () { b.textContent = by[ids[k++ % ids.length]].e + ' ' + by[ids[k % ids.length]].n; if (++n > 18) { clearInterval(iv); go(); } }, 110);
+      function go() {
+        var mine = ids[Math.floor(Math.random() * ids.length)];
+        rpc('spin_shared', { p_code: code, p_device: dev, p_pick: mine }).then(result).catch(function () { result(Object.assign({}, r, { pick: mine })); });
+      }
+    };
+    timer = setTimeout(wait, 4000); // falls jemand anderer schneller dreht
+  }
+})();
 </script>
 <footer><span>© 2026 Dish · Edina Hotea, Linz, Österreich</span><nav><a href="/support.html">Support</a><a href="/datenschutz.html">Datenschutz</a><a href="/nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="/impressum.html">Impressum</a></nav></footer></body></html>
