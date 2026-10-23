@@ -46,6 +46,15 @@ code{font-size:22px;letter-spacing:2px;background:var(--cream);padding:6px 12px;
 .row b{flex:1}.row span.v{color:var(--o);font-weight:800}
 .names{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}.names span{background:#EAF4EC;color:#2E7D4F;border-radius:99px;padding:4px 12px;font-size:14px;font-weight:700}
 .small{font-size:14px;color:var(--soft)}
+
+/* Zielscheibe fuer klaren Gruppen-Sieger */
+.ziel{position:relative;width:220px;height:220px;margin:18px auto 8px}
+.scheibe{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#C24E15 0 14%,#fff 14% 30%,#F2682A 30% 48%,#fff 48% 66%,#F2682A 66% 100%);box-shadow:0 8px 24px rgba(156,90,46,.25)}
+.pfeil{position:absolute;left:50%;top:50%;font-size:64px;line-height:1;color:#33241B;transform:translate(-100%,-10%);animation:pfeil .7s .4s cubic-bezier(.5,0,1,1) both}
+@keyframes pfeil{from{transform:translate(-460%,40%) rotate(-12deg);opacity:0}30%{opacity:1}to{transform:translate(-100%,-10%)}}
+.zname{text-align:center;animation:zname .5s 1.2s both}
+@keyframes zname{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pfeil,.zname{animation:none}}
 </style></head><body><header class=top><a class=brand href="/"><span class=plate><span>dish</span></span>Dish</a><nav class=menu><a href="/support.html">Support</a><a href="/datenschutz.html">Datenschutz</a><a href="/nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="/impressum.html">Impressum</a></nav></header><main class="inv" id="app"><div class="invcard"><div class="bigplate"><span>🎲</span></div><h1>Einen Moment …</h1></div></main>
 <script>
 (function () {
@@ -175,7 +184,7 @@ code{font-size:22px;letter-spacing:2px;background:var(--cream);padding:6px 12px;
       var by0 = {}; cards.forEach(function (c) { by0[c.id] = c; });
       var lead = (r.tally || [])[0] && by0[r.tally[0].id] ? '<p><b>' + by0[r.tally[0].id].e + ' ' + esc(by0[r.tally[0].id].n) + ' liegt vorne mit ' + r.tally[0].y + ' ♥</b></p>' : '';
       var txt = r.open ? (r.votes || 0) + ((r.votes || 0) === 1 ? ' hat' : ' haben') + ' gewählt.' + (r.closes_at ? ' Das Ergebnis kommt um ' + hm(r.closes_at) + ' oder sobald alle da sind.' : '') : (r.votes || 0) + ' von ' + (r.size || 2) + ' sind fertig. Das Ergebnis erscheint hier automatisch, sobald alle gewählt haben.';
-      show('<div class="invcard"><div class="bigplate"><span>⏳</span></div><h1>Danke' + (name ? ', ' + esc(name) : '') + '!</h1>' + (r.rev ? '<p class="small">Update: Es ist noch jemand dazugekommen.</p>' : '') + '<p>' + txt + '</p>' + lead + '<div class="names">' + names + '</div>' + cta() + '</div>');
+      show('<div class="invcard"><div class="bigplate"><span>⏳</span></div><h1>Danke' + (name ? ', ' + esc(name) : '') + '!</h1>' + '<p>' + txt + '</p>' + lead + '<div class="names">' + names + '</div>' + cta() + '</div>');
       timer = setTimeout(wait, 3000); return;
     }
     var by = {}; cards.forEach(function (c) { by[c.id] = c; });
@@ -187,6 +196,12 @@ code{font-size:22px;letter-spacing:2px;background:var(--cream);padding:6px 12px;
     if (pick && r.group && shownRev !== (r.rev || 0) + ':' + pick.id) {
       // Jeder hat seinen Roulette-Moment: kurz durch die Favoriten wirbeln, dann das Ergebnis
       shownRev = (r.rev || 0) + ':' + pick.id;
+      if (ids.length === 1) {
+        // Klarer Sieger: Pfeil fliegt in die Zielscheibe
+        show('<div class="invcard"><h1>Die Gruppe hat gewählt 🎯</h1><p>Es gibt einen klaren Sieger …</p><div class="ziel"><div class="scheibe"></div><div class="pfeil">➳</div></div><div class="zname"><div style="font-size:34px">' + pick.e + '</div><h2>' + esc(pick.n) + '</h2><p><b>Volltreffer! 🎯</b></p></div></div>');
+        setTimeout(function () { result(r); }, 3200);
+        return;
+      }
       var pool = (r.tally || []).map(function (x) { return by[x.id]; }).filter(Boolean).slice(0, 6); if (pool.length < 2) pool = cards.slice(0, 4);
       show('<div class="invcard"><div class="bigplate"><span id="sp">🎲</span></div><h1>Die Gruppe hat gewählt</h1><p id="spn">…</p></div>');
       var k = 0, n = 0, iv = setInterval(function () { var c = pool[k++ % pool.length]; document.getElementById('sp').textContent = c.e; document.getElementById('spn').textContent = c.n;
@@ -195,7 +210,7 @@ code{font-size:22px;letter-spacing:2px;background:var(--cream);padding:6px 12px;
     }
     if (pick && r.group) timer = setTimeout(wait, 5000); // kommt noch jemand dazu? -> Update
     if (pick) return show('<div class="invcard"><h1>Match! 🎉</h1>' + (votes ? '<p><b>' + votes.y + ' von ' + r.votes + ' wollen ins ' + esc(pick.n) + '</b></p>' : '') +
-      '<div class="card" style="min-height:0;box-shadow:none"><div class="emo">' + pick.e + '</div><h2>' + esc(pick.n) + '</h2>' + (pick.str ? '<div class="w">📍 ' + esc(pick.str) + '</div>' : '') + '<span class="chip">' + esc(pick.c) + '</span></div>' +
+      (r.late ? '<p class="small">' + (r.late === 1 ? '1 Person hat' : r.late + ' Personen haben') + ' später noch abgestimmt – das Ergebnis bleibt.</p>' : '') + '<div class="card" style="min-height:0;box-shadow:none"><div class="emo">' + pick.e + '</div><h2>' + esc(pick.n) + '</h2>' + (pick.str ? '<div class="w">📍 ' + esc(pick.str) + '</div>' : '') + '<span class="chip">' + esc(pick.c) + '</span></div>' +
       maps(pick) + (tally ? '<p class="small" style="margin-top:18px">So wurde abgestimmt</p>' + tally : '') + cta() + '</div>');
     if (ids.length === 0) return show('<div class="invcard"><h1>Kein Match 😅</h1><p>' + (r.group ? 'Kein Lokal hat mindestens 2 Stimmen bekommen.' : 'Diesmal hat nichts gepasst.') + ' Probiert es mit einer neuen Runde.</p>' + tally + cta() + '</div>');
     show('<div class="invcard"><div class="bigplate"><span>🎲</span></div><h1>' + ids.length + (r.group ? ' Lokale gleichauf!' : ' Matches!') + '</h1><p>Das Rad entscheidet. Wer zuerst dreht, entscheidet für alle.</p>' +
